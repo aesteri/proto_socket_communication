@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package christine;
+
+message yap_of_christine
+{
+    required string sender_name = 1;
+    optional string yap = 2;
+}
