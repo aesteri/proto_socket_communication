@@ -6,44 +6,33 @@
     utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, utils, mybar }:
-    # let in used to declare variables syntax: ${variable}
+  outputs = { self, nixpkgs, utils }:
     let
     
       program_overlay = final: prev: rec { 
-        # derivation in other nix
-        # pay attention to callPackage !
         program = final.callPackage ./default.nix { 
         };
       };
 
       my_overlays = [ program_overlay ];
-
-      #correct pkgs for the corresponding system
       pkgs = import nixpkgs {
         system = "x86_64-darwin";
         overlays = [ self.overlays.default ];
       };
     in
     {
-      #this is for nix build  
       overlays.default = nixpkgs.lib.composeManyExtensions my_overlays;
       packages.x86_64-darwin.default = pkgs.program;
 
-      #for the dev shell -nix develop
       devShells.x86_64-darwin.default =
         pkgs.mkShell rec {
-          # Update the name to something that suites your project.
           name = "client-server";
           packages = with pkgs; [
-            # Development Tools
             cmake
             protobuf
             program
           ];
 
-          # Setting up the environment variables you need during
-          # development.
           shellHook =
             let
               icon = "f121";

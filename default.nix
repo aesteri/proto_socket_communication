@@ -6,5 +6,5 @@ stdenv.mkDerivation {
     src = ./.;
 
     nativeBuildInputs = [ cmake ];
-    buildInputs = [protobuf ];
+    buildInputs = [ protobuf ];
 }
