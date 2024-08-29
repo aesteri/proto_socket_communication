@@ -15,7 +15,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-in this lab, you will write a basic server-client application, but with a twist: the car will be the server and the client will be your laptop! You will make an application that can send over a port your protobuf message, your laptop will parse the message and send a response to it. It will build upon what you learned in the previous hello-world labs to make something that can create a communication channel between the car and your laptop.
+In this project, you will write a basic server-client application, but with a twist: the car will be the server and the client will be your laptop! You will make an application that can send over a port your protobuf message, your laptop will parse the message and send a response to it. It will build upon what you learned in the previous hello-world labs to make something that can create a communication channel between the car and your laptop.
 
 
 
