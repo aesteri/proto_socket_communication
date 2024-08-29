@@ -25,8 +25,6 @@ in this lab, you will write a basic server-client application, but with a twist:
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * CMake
 * Nix
 * C++
