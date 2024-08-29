@@ -2,15 +2,19 @@
 #include "../include/server_driver.h"
 #include <iostream>
 
-
+/**
+ * @brief Executable that initiates Client
+ * 
+ * This files boots up the Client
+ */
 int main() {
     // Initialize the client with server IP and port
-    Client client("127.0.0.1", 8080); // Replace with the server's IP address
+    Client client("127.0.0.1", 8080); // Replace with the server's IP address AKA the car
 
-    // Create and send a message
+    // Create and send a message with the input '1'
     christine::Client message;
-    message.set_sender_name("ClientName");
-    message.set_message("Hello from the client!");
+    message.set_sender_name("Christine");
+    message.set_message("Hello from the CHRISTINE!");
     
     std::string input;
     std::cout << "Enter '1' to send a message: ";
@@ -24,12 +28,10 @@ int main() {
             std::cerr << "Failed to send message" << std::endl;
         }
 
-        // Receive and print the response
+        // Receive and print the response!
         hytech::Server responseMessage;
         if (client.ReceiveMessage(responseMessage)) {
-            std::cout << "Received response from server: " 
-                      << responseMessage.sender_name() << ": " 
-                      << responseMessage.message() << std::endl;
+            ;
         } else {
             std::cerr << "Failed to receive response" << std::endl;
         }

@@ -2,23 +2,27 @@
 #include "../include/server_driver.h"
 #include <iostream>
 
+/**
+ * @brief Executable that initiates Server
+ * 
+ * This files boots up the Server
+ */
 int main() {
+    // Initiate Server
     Server server("0.0.0.0", 8080);
 
     std::cout << "Server is running and listening on port 8080..." << std::endl;
+    // Be on the constant lookout for messages
     while (true) {
         christine::Client receivedMessage;
 
         // Receive message from client
         if (server.ReceiveMessage(receivedMessage)) {
-            std::cout << "Received message: " << receivedMessage.sender_name() << ": " 
-                      << receivedMessage.message() << std::endl;
-
-            // Prepare and send a response
+            // Prepare and send a response to client
             hytech::Server responseMessage;
-            responseMessage.set_sender_name("ServerName");
-            responseMessage.set_message("Hello from the server!");
-
+            responseMessage.set_sender_name("HyTech");
+            responseMessage.set_message("Hello from the Car!");
+            // Send message
             if (server.SendMessage(responseMessage)) {
                 std::cout << "Response sent successfully" << std::endl;
             } else {

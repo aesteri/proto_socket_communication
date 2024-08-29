@@ -7,7 +7,11 @@
 #include <unistd.h>     // For close
 #include "../proto/christine/christine.pb.h"
 #include "../proto/hytech/hytech.pb.h"
-
+/**
+ * @brief Class Server
+ * 
+ * Header file for the server driver
+ */
 class Server {
 public:
     Server(const std::string& server_ip, uint16_t server_port);
@@ -19,6 +23,9 @@ public:
 private:
     int sock;
     sockaddr_in server_addr;
+    sockaddr_in client_addr; 
+    // Analyze why we make a specific sockaddr_in for client & their purposes
+    // Compared to client_driver
     static const int BUFFER_SIZE = 1024;
 };
 

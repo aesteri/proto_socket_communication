@@ -9,7 +9,7 @@ find_package(Protobuf REQUIRED)
 # Define the path to your protobuf .proto files
 set(PROTOBUF_PROTO_DIR ${CMAKE_SOURCE_DIR}/proto)
 
-# List of generated Protobuf files
+# Define path variables
 set(PROTO_SRCS
     ${PROTOBUF_PROTO_DIR}/christine/christine.pb.cc
     ${PROTOBUF_PROTO_DIR}/hytech/hytech.pb.cc

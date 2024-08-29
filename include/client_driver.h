@@ -8,7 +8,11 @@
 #include "../proto/christine/christine.pb.h"
 #include "../proto/hytech/hytech.pb.h"
 
-
+/**
+ * @brief Class Client
+ * 
+ * Header file for the client driver
+ */
 class Client {
 public:
     Client(const std::string& server_ip, uint16_t server_port);

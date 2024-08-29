@@ -6,6 +6,11 @@
 #include "../proto/christine/christine.pb.h"
 #include "../proto/hytech/hytech.pb.h"
 
+/**
+ * @brief Class Client
+ * 
+ * Set up socket
+ */
 Client::Client(const std::string& server_ip, uint16_t server_port) {
     // Create socket
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);
@@ -24,7 +29,11 @@ Client::Client(const std::string& server_ip, uint16_t server_port) {
 Client::~Client() {
     close(sockfd);
 }
-
+/**
+ * @brief Class Client
+ * 
+ * sends message to the server
+ */
 bool Client::SendMessage(const christine::Client& message) {
     std::string serialized_message;
     if (!message.SerializeToString(&serialized_message)) {
@@ -39,7 +48,11 @@ bool Client::SendMessage(const christine::Client& message) {
     }
     return true;
 }
-
+/**
+ * @brief Class Client
+ * 
+ * sends response to the server
+ */
 bool Client::ReceiveMessage(hytech::Server& message) {
     char buffer[BUFFER_SIZE];
     sockaddr_in from_addr;
