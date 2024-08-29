@@ -5,8 +5,8 @@
 #include <arpa/inet.h>  // For sockaddr_in
 #include <sys/socket.h> // For socket functions
 #include <unistd.h>     // For close
-#include "../proto/christine/christine.pb.h" // Update include path
-#include "../proto/hytech/hytech.pb.h" 
+#include "../proto/christine/christine.pb.h"
+#include "../proto/hytech/hytech.pb.h"
 
 class Server {
 public:

@@ -5,6 +5,7 @@
 int main() {
     Server server("0.0.0.0", 8080);
 
+    std::cout << "Server is running and listening on port 8080..." << std::endl;
     while (true) {
         christine::Client receivedMessage;
 

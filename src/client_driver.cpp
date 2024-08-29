@@ -3,8 +3,8 @@
 #include <google/protobuf/message.h>
 #include <iostream>
 #include <cstring> // For memset
-#include "proto/christine/christine.pb.h" // Update include path
-#include "proto/hytech/hytech.pb.h" 
+#include "../proto/christine/christine.pb.h"
+#include "../proto/hytech/hytech.pb.h"
 
 Client::Client(const std::string& server_ip, uint16_t server_port) {
     // Create socket
